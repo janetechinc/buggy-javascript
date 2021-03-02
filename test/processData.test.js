@@ -23,9 +23,9 @@ describe("Process Data", () => {
       null,
       null,
       () => {
-        const outputBuff = fs.readFileSync("test/fixtures/formattedOutput.txt");
-        const genOutputBuff = fs.readFileSync(filename);
-        assert.equal(outputBuff.equals(genOutputBuff), true);
+        const output = fs.readFileSync("test/fixtures/formattedOutput.txt", "utf-8");
+        const genOutput = fs.readFileSync(filename, "utf-8");
+        assert.equal(output, genOutput);
         done();
       }
     );
@@ -39,9 +39,9 @@ describe("Process Data", () => {
       null,
       null,
       () => {
-        const outputBuff = fs.readFileSync("test/fixtures/formattedOutput.txt");
-        const genOutputBuff = fs.readFileSync(filename);
-        assert.equal(outputBuff.equals(genOutputBuff), true);
+        const output = fs.readFileSync("test/fixtures/formattedOutput.txt", "utf-8");
+        const genOutput = fs.readFileSync(filename, "utf-8");
+        assert.equal(output, genOutput);
         done();
       }
     );
@@ -63,7 +63,6 @@ describe("Process Data", () => {
   });
   it("should throw error on empty file contents", done => {
     const filename = "test-output-5.txt";
-    files.push(filename);
     const inputFile = "test/fixtures/emptyInput.txt";
     processData(inputFile, filename, msg => {
       assert.equal(msg, `Empty file ${inputFile}`);
@@ -79,11 +78,12 @@ describe("Process Data", () => {
       null,
       null,
       () => {
-        const outputBuff = fs.readFileSync(
-          "test/fixtures/ignoreMatchday4Output.txt"
+        const output = fs.readFileSync(
+          "test/fixtures/ignoreMatchday4Output.txt",
+          "utf-8",
         );
-        const genOutputBuff = fs.readFileSync(filename);
-        assert.equal(outputBuff.equals(genOutputBuff), true);
+        const genOutput = fs.readFileSync(filename, "utf-8");
+        assert.equal(output, genOutput);
         done();
       }
     );
