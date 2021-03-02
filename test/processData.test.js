@@ -63,7 +63,6 @@ describe("Process Data", () => {
   });
   it("should throw error on empty file contents", done => {
     const filename = "test-output-5.txt";
-    files.push(filename);
     const inputFile = "test/fixtures/emptyInput.txt";
     processData(inputFile, filename, msg => {
       assert.equal(msg, `Empty file ${inputFile}`);
