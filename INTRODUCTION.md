@@ -8,7 +8,7 @@ The difficult thing about this challenge is that both the code and tests are
 difficult to read. The tests are accurate. So if the tests pass, then the code
 behaves correctly.
 
-The goal of this exercise it to get as many specs passing as possible by making
+The goal of this exercise is to get as many specs passing as possible by making
 modifications to the code file. There are more failing specs than most people
 finish within the given time, so do not worry if you don't get a full green test
 run. You'll be evaluated most on your *approach* to debugging the code.
