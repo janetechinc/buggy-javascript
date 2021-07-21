@@ -25,7 +25,7 @@ describe("Process Data", () => {
       () => {
         const output = fs.readFileSync("test/fixtures/formattedOutput.txt", "utf-8");
         const genOutput = fs.readFileSync(filename, "utf-8");
-        assert.equal(output, genOutput);
+        assert.equal(genOutput, output);
         done();
       }
     );
@@ -41,7 +41,7 @@ describe("Process Data", () => {
       () => {
         const output = fs.readFileSync("test/fixtures/formattedOutput.txt", "utf-8");
         const genOutput = fs.readFileSync(filename, "utf-8");
-        assert.equal(output, genOutput);
+        assert.equal(genOutput, output);
         done();
       }
     );
@@ -49,7 +49,7 @@ describe("Process Data", () => {
   it("should show usage for missing input file", done => {
     const filename = "test-output-3.txt";
     processData(null, filename, msg => {
-      assert.equal(msg, "Usage: node processData.js input.txt");
+      assert.equal("Usage: node processData.js input.txt", msg);
       done();
     });
   });
@@ -57,7 +57,7 @@ describe("Process Data", () => {
     const filename = "test-output-4.txt";
     files.push(filename);
     processData("test/fixtures/errorInput.txt", filename, msg => {
-      assert.equal(msg, "Invalid entry at line: 1");
+      assert.equal("Invalid entry at line: 1", msg);
       done();
     });
   });
@@ -65,7 +65,7 @@ describe("Process Data", () => {
     const filename = "test-output-5.txt";
     const inputFile = "test/fixtures/emptyInput.txt";
     processData(inputFile, filename, msg => {
-      assert.equal(msg, `Empty file ${inputFile}`);
+      assert.equal(`Empty file ${inputFile}`, msg);
       done();
     });
   });
@@ -83,7 +83,7 @@ describe("Process Data", () => {
           "utf-8",
         );
         const genOutput = fs.readFileSync(filename, "utf-8");
-        assert.equal(output, genOutput);
+        assert.equal(genOutput, output);
         done();
       }
     );
