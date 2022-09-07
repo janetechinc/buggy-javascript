@@ -1,5 +1,3 @@
-This is the final coding challenge of the day.
-
 We're going to show you some code that tries to solve the "Soccer Tournament"
 problem and some tests. There are failing tests, and we're going to ask you
 to fix the tests by modifying the code file.
